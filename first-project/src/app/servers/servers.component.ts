@@ -16,10 +16,12 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created!';
   serverName = '';
   serverName2 = 'TestServer';
+  classes = false;
 
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
+      this.classes = true;
     }, 2000);
    }
 

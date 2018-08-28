@@ -11,6 +11,8 @@ class="form-control"
 [(ngModel)]="serverName2">
 <!-- <p>{{ serverName2 }}</p> -->
 
+<p [class.text-success] = "classes">Hello</p>
+
 <button 
 class="btn btn-primary"
 [disabled]="!allowNewServer"
