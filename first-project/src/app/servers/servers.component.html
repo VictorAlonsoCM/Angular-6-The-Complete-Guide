@@ -18,6 +18,17 @@ class="btn btn-primary"
 (click)="onCreateServer()">Add server</button>
 <!-- <p [innerText]="allowNewServer"></p> -->
 <!-- <p> {{ serverCreationStatus }}</p> -->
-<p *ngIf="serverCreated">Server was created. Server name is {{ serverName2 }} </p>
+<!-- If, Else **********************  *ngIf
+<p *ngIf="serverCreated; else noServer">Server was created. Server name is {{ serverName2 }} </p>
+//Local reference
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+-->
+<p *ngIf="serverCreated; else noServer">Server was created. Server name is {{ serverName2 }} </p>
+<!-- Local reference -->
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
