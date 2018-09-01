@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <ol>
         <li>Add A button which says 'Display Details'</li>
         <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
@@ -8,6 +8,13 @@
         <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
+      <button class="btn btn-success" (click)="secretP = !secretP" (click)="logged()">Display Details</button>
+      <p *ngIf="secretP">Secret Password = tuna</p>
+      <!-- <p [ngClass]="{'white':true}" *ngFor="let time2 of timeStampValue" [ngStyle]="{backgroundColor: (i < 5 ) ? 'node' : 'blue'}">{{time2}}</p> -->
+      <div 
+      *ngFor="let logItem of log"
+      [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : transparent}"
+      [ngClass]="{'white' : logItem >= 5 }">{{logItem}}</div>
     </div>
   </div>
 </div>
