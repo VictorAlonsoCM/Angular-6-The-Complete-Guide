@@ -12,9 +12,9 @@
       <p *ngIf="secretP">Secret Password = tuna</p>
       <!-- <p [ngClass]="{'white':true}" *ngFor="let time2 of timeStampValue" [ngStyle]="{backgroundColor: (i < 5 ) ? 'node' : 'blue'}">{{time2}}</p> -->
       <div 
-      *ngFor="let logItem of log"
-      [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : transparent}"
-      [ngClass]="{'white' : logItem >= 5 }">{{logItem}}</div>
+      *ngFor="let logItem of log; let i = index"
+      [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+      [ngClass]="{'white' : i >= 4 }">{{logItem}}</div>
     </div>
   </div>
 </div>
