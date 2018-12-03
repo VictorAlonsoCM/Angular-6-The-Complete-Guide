@@ -12,7 +12,8 @@ import {
   AfterViewChecked,
   OnDestroy,
   ViewChild,
-  ElementRef
+  ElementRef,
+  ContentChild
 } from '@angular/core';
 
 @Component({
@@ -29,7 +30,9 @@ AfterViewChecked, OnDestroy {
     content: string
   };
   @Input() name: string;
+  // This is used to get content from our template html
   @ViewChild('heading') header: ElementRef;
+  @ContentChild('contentParagraph') paragraph: ElementRef;
 
   constructor() {
     console.log('Construct');
@@ -43,6 +46,7 @@ AfterViewChecked, OnDestroy {
   ngOnInit() {
     console.log('ngOnInit');
     console.log('Text content:', this.header.nativeElement.textContent);
+    console.log('Text content of paragraph:', this.paragraph.nativeElement.textContent);
   }
 
 
@@ -52,6 +56,7 @@ AfterViewChecked, OnDestroy {
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit');
+    console.log('Text content of paragraph:', this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked() {
