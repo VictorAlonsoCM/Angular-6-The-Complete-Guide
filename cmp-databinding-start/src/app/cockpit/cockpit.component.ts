@@ -10,6 +10,7 @@ export class CockpitComponent implements OnInit {
   @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
   // newServerName = '';
   // newServerContent = '';
+  // This is used to take emelents from the HTML such as ElemmentRef
   @ViewChild('serverContentInput') serverContentInput: ElementRef;
 
   constructor() { }
